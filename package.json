@@ -1,0 +1,47 @@
+{
+  "name": "@kintone/rest-api-client-wechat-mp",
+  "version": "0.1.0",
+  "description": "kintone REST API client for WeChat mini program",
+  "main": "./dist/kintone-rest-api-client-wechat-mp.js",
+  "scripts": {
+    "eslint": "eslint src",
+    "build": "webpack",
+    "build:dev": "webpack --mode=development"
+  },
+  "author": {
+    "name": "Cybozu, Inc.",
+    "email": "",
+    "url": "https://cybozu.co.jp"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kintone/rest-api-client-WeChat-mp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kintone/rest-api-client-WeChat-mp/issues"
+  },
+  "homepage": "https://github.com/kintone/rest-api-client-WeChat-mp#readme",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "kintone",
+    "rest",
+    "api-client",
+    "cybozu",
+    "cybozu.com",
+    "kintone.com",
+    "wechat",
+    "miniprogram"
+  ],
+  "devDependencies": {
+    "@cybozu/eslint-config": "10.0.2",
+    "@kintone/rest-api-client": "1.1.0",
+    "eslint": "6.8.0",
+    "js-base64": "2.5.2",
+    "qs": "6.9.3",
+    "webpack": "4.42.1",
+    "webpack-cli": "3.3.11"
+  }
+}
