@@ -1,7 +1,7 @@
 const path = require('path');
 
 module.exports = (env, argv) => ({
-  entry: './src/KintoneRestApiClient.js',
+  entry: './src/KintoneRestAPIClient.js',
   output: {
     filename: 'kintone-rest-api-client-wechat-mp.js',
     path: path.resolve(__dirname, 'dist'),

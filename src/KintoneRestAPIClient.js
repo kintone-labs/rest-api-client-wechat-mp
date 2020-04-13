@@ -6,8 +6,13 @@ import {Base64} from 'js-base64';
 import {WxHttpClient} from './http/WxHttpClient';
 import {KintoneRestAPIError} from '@kintone/rest-api-client/esm/KintoneRestAPIError';
 
-export class KintoneRestApiClient {
-  constructor({baseUrl, auth, guestSpaceId, basicAuth}) {
+export class KintoneRestAPIClient {
+  constructor(options = {}) {
+    const baseUrl = 'baseUrl' in options ? options.baseUrl : '';
+    const auth = 'auth' in options ? options.auth : {};
+    const {guestSpaceId} = options;
+    const {basicAuth} = options;
+
     const newAuth = this.buildAuth(auth);
     this.headers = this.buildHeaders(newAuth, basicAuth);
 
