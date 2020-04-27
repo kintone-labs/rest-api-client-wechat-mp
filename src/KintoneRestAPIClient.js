@@ -3,8 +3,8 @@ import {RecordClient} from '@kintone/rest-api-client/esm/client/RecordClient';
 import {AppClient} from '@kintone/rest-api-client/esm/client/AppClient';
 import {FileClient} from './client/FileClient';
 import {Base64} from 'js-base64';
-import {WxHttpClient} from './http/WxHttpClient';
 import {KintoneRestAPIError} from '@kintone/rest-api-client/esm/KintoneRestAPIError';
+import {WxHttpClient} from './http/WxHttpClient';
 
 export class KintoneRestAPIClient {
   constructor(options = {}) {
@@ -21,8 +21,14 @@ export class KintoneRestAPIClient {
       throw new Error('in WeChat environment, baseUrl is required');
     }
 
-    const errorResponseHandler = (errorResponse) => {
-      throw new KintoneRestAPIError(errorResponse);
+    const errorResponseHandler = (error) => {
+      if (!error.data) {
+        throw new Error(error.errMsg);
+      }
+      error.status = error.statusCode;
+      error.headers = error.header;
+
+      throw new KintoneRestAPIError(error);
     };
 
     const httpClient = new WxHttpClient({
@@ -61,13 +67,22 @@ export class KintoneRestAPIClient {
 
     switch (auth.type) {
       case 'password': {
-        return {...headers, 'X-Cybozu-Authorization': Base64.encode(`${auth.username}:${auth.password}`)};
+        return {
+          ...headers,
+          'X-Cybozu-Authorization': Base64.encode(`${auth.username}:${auth.password}`)
+        };
       }
       case 'apiToken': {
         if (Array.isArray(auth.apiToken)) {
-          return {...headers, 'X-Cybozu-API-Token': auth.apiToken.join(',')};
+          return {
+            ...headers,
+            'X-Cybozu-API-Token': auth.apiToken.join(',')
+          };
         }
-        return {...headers, 'X-Cybozu-API-Token': auth.apiToken};
+        return {
+          ...headers,
+          'X-Cybozu-API-Token': auth.apiToken
+        };
       }
       default: {
         return {...headers};

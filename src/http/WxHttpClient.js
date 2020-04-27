@@ -49,7 +49,7 @@ export class WxHttpClient {
     try {
       response = await this.wxSendRequest(requestConfig);
     } catch (error) {
-      this.handleError(error);
+      this.errorResponseHandler(error);
     }
     return response;
   }
@@ -96,15 +96,6 @@ export class WxHttpClient {
         }
       }
     });
-  }
-
-  handleError(error) {
-    if (error.data) {
-      error.status = error.statusCode;
-      error.headers = error.header;
-      this.errorResponseHandler(error);
-    }
-    throw new Error(error.errMsg);
   }
 
   buildRequestConfig(method, path, params, options) {
