@@ -1,7 +1,7 @@
 {
   "name": "@kintone/rest-api-client-wechat-mp",
   "version": "0.1.0",
-  "description": "kintone REST API client for WeChat mini program",
+  "description": "kintone REST API client for WeChat Mini Program",
   "main": "./dist/kintone-rest-api-client-wechat-mp.js",
   "scripts": {
     "eslint": "eslint src",
@@ -16,12 +16,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kintone/rest-api-client-WeChat-mp.git"
+    "url": "git+https://github.com/kintone/rest-api-client-wechat-mp.git"
   },
   "bugs": {
-    "url": "https://github.com/kintone/rest-api-client-WeChat-mp/issues"
+    "url": "https://github.com/kintone/rest-api-client-wechat-mp/issues"
   },
-  "homepage": "https://github.com/kintone/rest-api-client-WeChat-mp#readme",
+  "homepage": "https://github.com/kintone/rest-api-client-wechat-mp#readme",
   "files": [
     "dist"
   ],
