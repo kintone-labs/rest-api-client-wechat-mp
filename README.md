@@ -81,10 +81,10 @@ The client determines which method to use by passed parameters.
 
 #### 1. Parameters for [Password authentication](https://developer.kintone.io/hc/en-us/articles/212495188#passwordAuth)
 
-| Name     |  Type  | Required | Description |
-| -------- | :----: | :------: | ----------- |
-| username | String |   Yes    |
-| password | String |   Yes    |
+| Name     |  Type  | Required |    Description    |
+| -------- | :----: | :------: | ----------------- |
+| username | String |   Yes    | User's login name |
+| password | String |   Yes    | User's password   |
 
 #### 2. Parameters for [API token authentication](https://developer.kintone.io/hc/en-us/articles/212495188#APItokenAuth)
 
