@@ -28,7 +28,7 @@
 ## Overview
 
 ```js
-const client = new KintoneRestAPIClient({
+const client = new KintoneRestAPIClientWx({
   baseUrl: "https://example.cybozu.com",
   auth: { apiToken: process.env.KINTONE_API_TOKEN }
 });

@@ -36,8 +36,8 @@ Click "工具" > "构建npm" (Ref. [npm 支持](https://developers.weixin.qq.com
 ### Sample code
 
 ```js
-const {KintoneRestAPIClient} = require('@kintone/rest-api-client-wechat-mp');
-const client = new KintoneRestAPIClient({
+const {KintoneRestAPIClientWx} = require('@kintone/rest-api-client-wechat-mp');
+const client = new KintoneRestAPIClientWx({
   baseUrl: "https://example.cybozu.com",
   // Use password authentication
   auth: {
@@ -58,7 +58,7 @@ client.record
   });
 ```
 
-## Parameters for `KintoneRestAPIClient`
+## Parameters for `KintoneRestAPIClientWx`
 
 | Name                       |                               Type                               |          Required           | Description                                                                                                                                                                                                                  |
 | -------------------------- | :--------------------------------------------------------------: | :-------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -92,16 +92,20 @@ The client determines which method to use by passed parameters.
 | -------- | :----------------: | :------: | ------------------------------------------------------- |
 | apiToken | String or String[] |   Yes    | You can pass multiple api tokens as an array of string. |
 
+## Wrapper API
+
+- [@kintone/rest-api-client@v1.2.0](https://github.com/kintone/js-sdk/tree/%40kintone/rest-api-client%401.2.0/packages/rest-api-client)
+
 ## Error Handling
 
-- [Error Handling](docs/errorHandling.md)
+- [Error Handling](docs/errorHandling.md) (referred to [@kintone/rest-api-client/errorHandling.md](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/errorHandling.md)))
 
 ## References
 
-- [Record](docs/record.md)
-- [App](docs/app.md)
+- [Record](docs/record.md) (referred to [@kintone/rest-api-client/record.md](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/record.md)))
+- [App](docs/app.md) (referred to [@kintone/rest-api-client/app.md](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/app.md))
 - [File](docs/file.md)
-- [BulkRequest](docs/bulkRequest.md)
+- [BulkRequest](docs/bulkRequest.md) (referred to [@kintone/rest-api-client/bulkRequest.md](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/bulkRequest.md))
 
 ## License
 
