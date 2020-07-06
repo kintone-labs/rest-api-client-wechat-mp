@@ -2,6 +2,9 @@
 
 [![npm version](https://badge.fury.io/js/%40kintone%2Frest-api-client-wechat-mp.svg)](https://badge.fury.io/js/%40kintone%2Frest-api-client-wechat-mp)
 
+An API client for Kintone REST API, it is used in WeChat Mini Program client.<br>
+It wrapped [@kintone/rest-api-client@v1.2.0](https://github.com/kintone/js-sdk/tree/%40kintone/rest-api-client%401.2.0/packages/rest-api-client).
+
 ## Requirement
 
 - [WeChat Developer Tool](https://developers.weixin.qq.com/miniprogram/dev/devtools/stable.html) (The latest)<br>
@@ -91,10 +94,6 @@ The client determines which method to use by passed parameters.
 | Name     |        Type        | Required | Description                                             |
 | -------- | :----------------: | :------: | ------------------------------------------------------- |
 | apiToken | String or String[] |   Yes    | You can pass multiple api tokens as an array of string. |
-
-## Wrapper API
-
-- [@kintone/rest-api-client@v1.2.0](https://github.com/kintone/js-sdk/tree/%40kintone/rest-api-client%401.2.0/packages/rest-api-client)
 
 ## Error Handling
 
