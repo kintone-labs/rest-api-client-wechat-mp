@@ -108,7 +108,7 @@ The client determines which method to use by passed parameters.
 
 ## License
 
-- [MIT](LICENSE)
+- [MIT](LICENSE.md)
 
 ## Copyright
 
