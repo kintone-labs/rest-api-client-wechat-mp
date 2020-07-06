@@ -39,8 +39,8 @@ Click "工具" > "构建npm" (Ref. [npm 支持](https://developers.weixin.qq.com
 ### Sample code
 
 ```js
-const {KintoneRestAPIClientWx} = require('@kintone/rest-api-client-wechat-mp');
-const client = new KintoneRestAPIClientWx({
+const {KintoneRestAPIClientWeChatMP} = require('@kintone/rest-api-client-wechat-mp');
+const client = new KintoneRestAPIClientWeChatMP({
   baseUrl: "https://example.cybozu.com",
   // Use password authentication
   auth: {
@@ -61,7 +61,7 @@ client.record
   });
 ```
 
-## Parameters for `KintoneRestAPIClientWx`
+## Parameters for `KintoneRestAPIClientWeChatMP`
 
 | Name                       |                               Type                               |          Required           | Description                                                                                                                                                                                                                  |
 | -------------------------- | :--------------------------------------------------------------: | :-------------------------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

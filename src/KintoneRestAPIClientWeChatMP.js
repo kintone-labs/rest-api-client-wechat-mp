@@ -6,7 +6,7 @@ import {Base64} from 'js-base64';
 import {KintoneRestAPIError} from '@kintone/rest-api-client/esm/KintoneRestAPIError';
 import {WxHttpClient} from './http/WxHttpClient';
 
-export class KintoneRestAPIClientWx {
+export class KintoneRestAPIClientWeChatMP {
   constructor(options = {}) {
     const baseUrl = 'baseUrl' in options ? options.baseUrl : '';
     const auth = 'auth' in options ? options.auth : {};

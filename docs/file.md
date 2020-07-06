@@ -6,7 +6,7 @@
 ## Overview
 
 ```js
-const client = new KintoneRestAPIClientWx({
+const client = new KintoneRestAPIClientWeChatMP({
   baseUrl: "https://example.cybozu.com",
   auth: {
     username: process.env.KINTONE_USERNAME,
