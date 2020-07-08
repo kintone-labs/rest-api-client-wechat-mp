@@ -3,7 +3,8 @@
 [![npm version](https://badge.fury.io/js/%40kintone%2Frest-api-client-wechat-mp.svg)](https://badge.fury.io/js/%40kintone%2Frest-api-client-wechat-mp)
 
 An API client for Kintone REST API, it is used in WeChat Mini Program client.<br>
-It wrapped [@kintone/rest-api-client@v1.2.0](https://github.com/kintone/js-sdk/tree/%40kintone/rest-api-client%401.2.0/packages/rest-api-client).
+It is based on [@kintone/rest-api-client@v1.2.0](https://github.com/kintone/js-sdk/tree/%40kintone/rest-api-client%401.2.0/packages/rest-api-client). <br>
+It wraps the functions of app, record and bulkRequest of "@kintone/rest-api-client", and develops the new functions of file.
 
 ## Requirement
 
@@ -95,16 +96,16 @@ The client determines which method to use by passed parameters.
 | -------- | :----------------: | :------: | ------------------------------------------------------- |
 | apiToken | String or String[] |   Yes    | You can pass multiple api tokens as an array of string. |
 
-## Error Handling
-
-- [Error Handling](docs/errorHandling.md) (referred to [@kintone/rest-api-client/errorHandling.md](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/errorHandling.md)))
-
 ## References
 
-- [Record](docs/record.md) (referred to [@kintone/rest-api-client/record.md](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/record.md)))
-- [App](docs/app.md) (referred to [@kintone/rest-api-client/app.md](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/app.md))
 - [File](docs/file.md)
-- [BulkRequest](docs/bulkRequest.md) (referred to [@kintone/rest-api-client/bulkRequest.md](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/bulkRequest.md))
+
+The usage of following functions is not changed, you can refer to the doc of "@kintone/rest-api-client".<br>
+Pay attention to the class name, you should use KintoneRestAPIClientWeChatMP in WeChat. Refer to [Sample code](#sample-code).
+- [@kintone/rest-api-client/errorHandling](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/errorHandling.md)
+- [@kintone/rest-api-client/record](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/record.md)
+- [@kintone/rest-api-client/app](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/app.md)
+- [@kintone/rest-api-client/bulkRequest](https://github.com/kintone/js-sdk/blob/%40kintone/rest-api-client%401.2.0/packages/rest-api-client/docs/bulkRequest.md)
 
 ## License
 
