@@ -11,11 +11,11 @@ export class FileClient {
       endpointName: 'file',
     });
 
-    if (typeof params.filePath === 'undefined') {
+    if (typeof params !== 'object' || typeof params.filePath === 'undefined') {
       throw new Error('in WeChat environment, filePath is required');
     }
 
-    return this.client.uploadFile(path, params.filePath);
+    return this.client.uploadFile(path, params);
   }
 
   async downloadFile(params) {

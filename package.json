@@ -6,7 +6,8 @@
   "scripts": {
     "eslint": "eslint src",
     "build": "webpack",
-    "build:dev": "webpack --mode=development"
+    "build:dev": "webpack --mode=development",
+    "test": "jest"
   },
   "author": {
     "name": "Cybozu, Inc.",
@@ -36,9 +37,12 @@
     "miniprogram"
   ],
   "devDependencies": {
+    "@babel/core": "7.10.5",
+    "@babel/preset-env": "7.10.4",
     "@cybozu/eslint-config": "10.0.2",
     "@kintone/rest-api-client": "1.2.0",
     "eslint": "6.8.0",
+    "jest": "26.1.0",
     "js-base64": "2.5.2",
     "qs": "6.9.3",
     "webpack": "4.43.0",

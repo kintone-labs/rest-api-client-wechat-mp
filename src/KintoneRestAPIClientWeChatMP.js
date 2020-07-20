@@ -6,6 +6,16 @@ import {Base64} from 'js-base64';
 import {KintoneRestAPIError} from '@kintone/rest-api-client/esm/KintoneRestAPIError';
 import {WxHttpClient} from './http/WxHttpClient';
 
+export const errorResponseHandler = (error) => {
+  if (!error.data) {
+    throw new Error(error.errMsg);
+  }
+  error.status = error.statusCode;
+  error.headers = error.header;
+
+  throw new KintoneRestAPIError(error);
+};
+
 export class KintoneRestAPIClientWeChatMP {
   constructor(options = {}) {
     const baseUrl = 'baseUrl' in options ? options.baseUrl : '';
@@ -17,19 +27,9 @@ export class KintoneRestAPIClientWeChatMP {
     this.headers = this.buildHeaders(newAuth, basicAuth);
 
     this.baseUrl = baseUrl;
-    if (typeof this.baseUrl === 'undefined') {
+    if (this.baseUrl === '') {
       throw new Error('in WeChat environment, baseUrl is required');
     }
-
-    const errorResponseHandler = (error) => {
-      if (!error.data) {
-        throw new Error(error.errMsg);
-      }
-      error.status = error.statusCode;
-      error.headers = error.header;
-
-      throw new KintoneRestAPIError(error);
-    };
 
     const httpClient = new WxHttpClient({
       baseUrl: this.baseUrl,

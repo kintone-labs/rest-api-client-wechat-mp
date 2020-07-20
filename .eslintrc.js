@@ -1,6 +1,9 @@
 module.exports = {
-  extends: "@cybozu",
+  extends: '@cybozu',
   globals: {
     wx: false
-  }
+  },
+  env: {
+    jest: true
+  },
 };

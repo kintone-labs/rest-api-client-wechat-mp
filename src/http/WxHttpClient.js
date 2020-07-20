@@ -35,9 +35,9 @@ export class WxHttpClient {
     return this.sendRequest(requestConfig);
   }
 
-  async uploadFile(path, filePath) {
+  async uploadFile(path, params) {
     const requestConfig = this.buildRequestConfig('post', path, {}, {
-      filePath: filePath,
+      filePath: params.filePath,
       name: 'file',
       fileMethod: 'upload',
     });
@@ -54,6 +54,22 @@ export class WxHttpClient {
     return response;
   }
 
+  callWxAPI(requestConfig) {
+    switch (requestConfig.fileMethod) {
+      case 'download': {
+        return wx.downloadFile(requestConfig);
+      }
+      case 'upload': {
+        return wx.uploadFile(requestConfig);
+      }
+      case 'read':
+        return wx.getFileSystemManager().readFileSync(requestConfig.tempFilePath, 'utf8');
+      default: {
+        return wx.request(requestConfig);
+      }
+    }
+  }
+
   wxSendRequest(requestConfig) {
     // Execute request
     return new Promise((resolve, reject) => {
@@ -67,10 +83,12 @@ export class WxHttpClient {
             if (res.statusCode === 200) {
               resolve({tempFilePath: res.tempFilePath});
             } else {
-              reject(res);
+              reject({
+                ...res,
+                data: JSON.parse(this.callWxAPI({fileMethod: 'read', tempFilePath: res.tempFilePath}))
+              });
             }
           };
-          wx.downloadFile(requestConfig);
           break;
         }
         case 'upload': {
@@ -78,10 +96,9 @@ export class WxHttpClient {
             if (res.statusCode === 200) {
               resolve(JSON.parse(res.data));
             } else {
-              reject(res);
+              reject({...res, data: JSON.parse(res.data)});
             }
           };
-          wx.uploadFile(requestConfig);
           break;
         }
         default: {
@@ -92,9 +109,10 @@ export class WxHttpClient {
               reject(res);
             }
           };
-          wx.request(requestConfig);
         }
       }
+
+      this.callWxAPI(requestConfig);
     });
   }
 
