@@ -86,7 +86,7 @@ You can use the file key at the following place.
 
 ### downloadFile
 
-Downloads files using a file key.
+Downloads files using a file key from kintone.
 
 This is **NOT** the file key `uploadFile` returns.
 You can get the file key from the following place.
