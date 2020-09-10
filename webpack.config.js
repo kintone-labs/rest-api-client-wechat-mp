@@ -7,5 +7,5 @@ module.exports = (env, argv) => ({
     path: path.resolve(__dirname, 'dist'),
     libraryTarget: 'commonjs2',
   },
-  devtool: argv.mode === 'development' ? 'inline-cheap-source-map' : ''
+  devtool: argv.mode === 'development' ? 'inline-cheap-source-map' : false
 });
