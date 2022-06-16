@@ -77,20 +77,20 @@ client.record
 
 The client supports three authentication methods:
 
-1. [Password authentication](https://developer.kintone.io/hc/en-us/articles/212495188#passwordAuth)
-2. [API token authentication](https://developer.kintone.io/hc/en-us/articles/212495188#APItokenAuth)
+1. [Password authentication](https://kintone.dev/en/docs/common/authentication/#password-authentication)
+2. [API token authentication](https://kintone.dev/en/docs/common/authentication/#api-token-authentication)
 
 The required parameters inside `auth` are different by the methods.
 The client determines which method to use by passed parameters.
 
-#### 1. Parameters for [Password authentication](https://developer.kintone.io/hc/en-us/articles/212495188#passwordAuth)
+#### 1. Parameters for [Password authentication](https://kintone.dev/en/docs/common/authentication/#password-authentication)
 
 | Name     |  Type  | Required |    Description    |
 | -------- | :----: | :------: | ----------------- |
 | username | String |   Yes    | User's login name |
 | password | String |   Yes    | User's password   |
 
-#### 2. Parameters for [API token authentication](https://developer.kintone.io/hc/en-us/articles/212495188#APItokenAuth)
+#### 2. Parameters for [API token authentication](https://kintone.dev/en/docs/common/authentication/#api-token-authentication)
 
 | Name     |        Type        | Required | Description                                             |
 | -------- | :----------------: | :------: | ------------------------------------------------------- |
